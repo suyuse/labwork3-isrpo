@@ -27,11 +27,7 @@ jobs:
     - name: Prepare test environment
       shell: bash
       run: |
-        # Создаем __init__.py файлы если их нет
         touch tests/__init__.py 2>/dev/null || true
-        
-        # Модифицируем тестовые файлы для корректного импорта
-        # или используем PYTHONPATH
         echo "Current directory: $(pwd)"
         echo "Files in tests directory:"
         ls -la tests/
@@ -39,8 +35,5 @@ jobs:
     - name: Run tests with proper imports
       shell: bash
       run: |
-        # Добавляем текущую директорию в PYTHONPATH
         export PYTHONPATH=$PYTHONPATH:$PWD
-        
-        # Запускаем тесты
         python -m pytest tests/ -v --tb=short
