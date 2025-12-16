@@ -6,6 +6,8 @@ import circle
 import square
 import math
 
+
+
 print("ТЕСТИРОВАНИЕ ФУНКЦИЙ ДЛЯ КРУГА")
 
 print("\nТест из задания (радиус = 9):")
